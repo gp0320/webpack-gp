@@ -64,9 +64,23 @@ module.exports = (env, argv) => {
     //能够自动刷新浏览器,前提是安装npm install --save-dev webpack-dev-server
     //同时需要在package.json文件中scripts下面加入"start": "webpack-dev-server --open"
     //使用cnpm start
-    // devServer: {
-    //     contentBase: './dist'
-    // },
+   devServer: {
+     overlay: {
+       warnings: true,
+       errors: true
+     }, //在页面上全屏输出警告和错误的覆盖
+     compress: false, //一切服务器都使用gzip压缩
+     progress: false, //显示webpack构建进度
+     // historyApiFallback: true, //启用html5 history route
+     disableHostCheck: true,
+     port: 9898,
+     hot: true,
+     open: true,//自动打开浏览器
+     inline: true,
+     host: "127.0.0.1",
+
+
+   },
 
   module: {
     rules: [
@@ -126,7 +140,7 @@ module.exports = (env, argv) => {
         //该插件作用是在每次执行cnpm run build构建命令之后，对应目录下所有的文件都会被删除，保证该目录生成的文件是最新的，同时一些没有用到的文件也不用维护
         new CleanWebpackPlugin(['dist']),
 
-      new webpack.NamedModulesPlugin(),
+      new webpack.NamedModulesPlugin(),  // 用于开发环境 热更新
 
       new ModuleConcatenationPlugin(), //作用于提升
 
@@ -159,7 +173,7 @@ module.exports = (env, argv) => {
 
   optimization: {
       //优化，代码拆分，分离公共文件和业务文件
-      minimize: false,
+      minimize: true,
       splitChunks: {
           chunks: "all",//Webpack 4 只会对按需加载的代码做分割,如果我们需要配置初始加载的代码也加入到代码分割中，可以设置 splitChunks.chunks 为 'all'
           cacheGroups: {

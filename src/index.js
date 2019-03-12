@@ -5,6 +5,11 @@ import './style.css';
 import Icon from './Icon.png';
 import Data from './data.xml';
 
+// app.js
+import { a } from "./util";
+console.log(a());
+
+
 
 var users = [
   { 'user': 'barney',  'active': false },

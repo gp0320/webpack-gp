@@ -46,4 +46,10 @@ module.exports = (env, argv) => {
 *  style-loader 是动态创建style 插件Css。 既然已经在外引用了css，不需要style-loader.
 
 
-
+##### V4版本 默认开始 tree-shaking
+*   不用再引入 UglifyjsWebpackPlugin
+开启条件：
+```
+  optimization: {
+      minimize: true, // 我改为false 就不压缩 也不 sharking 代码
+```
