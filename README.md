@@ -1,5 +1,7 @@
 ## webpack 构建教程
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/gp0320/webpack-gp.svg)](https://greenkeeper.io/)
+
 ##### 忽略不用的lodash
 
 ```
