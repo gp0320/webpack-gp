@@ -1,7 +1,8 @@
 
 //tree-shaking demo
 export function a() {
-  return 'this is function "a"';
+
+  return 'this is   function "aa"';
 }
 
 export function b() {

@@ -1,24 +1,25 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 // import {findIndex} from 'lodash';
 // var findIndex = require('lodash/findIndex') ;
+
 import './style.css';
 import Icon from './Icon.png';
 import Data from './data.xml';
 
 // app.js
-import { a } from "./util";
+import { a } from "./tree-shaking.js";
 console.log(a());
 
 
 
-var users = [
-  { 'user': 'barney',  'active': false },
-  { 'user': 'fred',    'active': false },
-  { 'user': 'pebbles', 'active': true }
-];
-
-let result = _.findIndex(users, { 'user': 'fred', 'active': false });
-console.log(result)
+// var users = [
+//   { 'user': 'barney',  'active': false },
+//   { 'user': 'fred',    'active': false },
+//   { 'user': 'pebbles', 'active': true }
+// ];
+//
+// let result = _.findIndex(users, { 'user': 'fred', 'active': false });
+// console.log(result)
 
 
 function component() {
@@ -34,11 +35,32 @@ function component() {
   var myIcon = new Image();
   myIcon.src = Icon;
 
-  //输出Data数据
-  console.log(Data);
+
   element.appendChild(myIcon);
+
+
+  //写法一：
+  element.onclick = function (e) {
+    //模拟懒加载，按需加载print模块
+    import(/* webpackChunkName: "shijie" */ './print').then(function (module) {
+      var print = module.default;
+      print(e);
+      console.dir(module);
+    });
+    // import("lodash").then((_) => {
+    //   var br = document.createElement('br');
+    //   var button = document.createElement('button');
+    //   button.innerHTML = _.join(['你好', 'webpack',(new Date()).getTime()], ' ');
+    //   document.body.appendChild(br);
+    //   document.body.appendChild(button);
+    //
+    // });
+  };
+
 
   return element;
 }
 
 document.body.appendChild(component());
+
+

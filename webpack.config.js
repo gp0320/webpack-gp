@@ -173,7 +173,7 @@ module.exports = (env, argv) => {
 
   optimization: {
       //优化，代码拆分，分离公共文件和业务文件
-      minimize: true,
+      minimize: false,
       splitChunks: {
           chunks: "all",//Webpack 4 只会对按需加载的代码做分割,如果我们需要配置初始加载的代码也加入到代码分割中，可以设置 splitChunks.chunks 为 'all'
           cacheGroups: {
