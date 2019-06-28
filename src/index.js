@@ -2,15 +2,31 @@
 // import {findIndex} from 'lodash';
 // var findIndex = require('lodash/findIndex') ;
 
+
+import { a, b, c } from 'delete';
+
+
 import './style.css';
+import './mm.css?module';
 import Icon from './Icon.png';
 import Data from './data.xml';
 
 // app.js
-import { a } from "./tree-shaking.js";
-console.log(a());
+// import { a } from "./tree-shaking.js";
+
+// var tree = require('./tree-shaking.js')
+// console.log(a());
 
 
+if (module.hot) {
+    console.log(module.hot);
+    alert(5);
+    module.hot.accept('./tree-shaking.js', (...arg) => {
+        console.log(arg);
+        alert(58);
+    // a()
+    });
+}
 
 // var users = [
 //   { 'user': 'barney',  'active': false },
@@ -23,29 +39,29 @@ console.log(a());
 
 
 function component() {
-  var element = document.createElement('div');
+    const element = document.createElement('div');
 
-  // Lodash, now imported by this script
-  element.innerHTML = `sdasd`;
-  element.classList.add('hello');
+    // Lodash, now imported by this script
+    element.innerHTML = 'sdasd';
+    element.classList.add('hello');
 
-  let a = `dsdf`
+    const a = 'd1233452435466yusdf';
 
-  // 将图像添加到我们现有的 div。
-  var myIcon = new Image();
-  myIcon.src = Icon;
-
-
-  element.appendChild(myIcon);
+    // 将图像添加到我们现有的 div。
+    const myIcon = new Image();
+    myIcon.src = Icon;
 
 
-  //写法一：
-  element.onclick = function (e) {
-    //模拟懒加载，按需加载print模块
-    import(/* webpackChunkName: "shijie" */ './print').then(function (module) {
-      var print = module.default;
-      print(e);
-      console.dir(module);
+    element.appendChild(myIcon);
+
+
+    // 写法一：
+    element.onclick = function (e) {
+    // 模拟懒加载，按需加载print模块
+    import(/* webpackChunkName: "shijie" */ './print').then((module) => {
+        const print = module.default;
+        print(e);
+        console.dir(module);
     });
     // import("lodash").then((_) => {
     //   var br = document.createElement('br');
@@ -55,12 +71,10 @@ function component() {
     //   document.body.appendChild(button);
     //
     // });
-  };
+    };
 
 
-  return element;
+    return element;
 }
 
 document.body.appendChild(component());
-
-

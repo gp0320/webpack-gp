@@ -114,7 +114,10 @@ module.exports = (env, argv) => {
 
     plugins: [
 
-      new webpack.NamedModulesPlugin(),  // 用于开发环境 热更新
+      // new webpack.NamedModulesPlugin(),  // 用于开发环境 热更新
+
+      new webpack.HotModuleReplacementPlugin(),
+
 
       new ModuleConcatenationPlugin(), //作用于提升
 

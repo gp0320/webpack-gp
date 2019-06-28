@@ -1,7 +1,9 @@
 {
-  "/dist/app.js": "./app.9504d74.js",
-  "/dist/shijie.js": "./shijie.9504d74.js",
-  "/dist/vendors.js": "./vendors.9504d74.js",
+  "/dist/styles.css": "./0.8cb945d.css",
+  "/dist/styles.js": "./styles.3cc4947.js",
+  "/dist/app.js": "./app.e43cc0c.js",
+  "/dist/shijie.js": "./shijie.0b0883e.js",
+  "/dist/vendors.js": "./vendors.1064613.js",
   "/dist/./index.html": "././index.html",
-  "/dist/image/Icon.png": "./image/Icon.png"
+  "/dist/image/style.css": "./image/Icon.png"
 }

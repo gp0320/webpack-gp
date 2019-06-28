@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 const chalk = require('chalk')
-const msgPath = process.env.GIT_PARAMS
+const msgPath = process.env.HUSKY_GIT_PARAMS
 const msg = require('fs').readFileSync(msgPath, 'utf-8').trim()
 
 const commitRE = /^(revert: |Merge branch)?(feat|fix|docs|style|refactor|perf|test|workflow|ci|chore|types|merge)(\(.+\))?: .{1,50}/

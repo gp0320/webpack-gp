@@ -56,14 +56,14 @@
 /******/ 	// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 	// Promise = chunk loading, 0 = chunk loaded
 /******/ 	var installedChunks = {
-/******/ 		0: 0
+/******/ 		1: 0
 /******/ 	};
 /******/
 /******/ 	var deferredModules = [];
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"1":"shijie"}[chunkId]||chunkId) + "." + "9504d74" + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"2":"shijie"}[chunkId]||chunkId) + "." + {"2":"0b0883e"}[chunkId] + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -213,75 +213,32 @@
 /******/
 /******/
 /******/ 	// add entry module to deferred list
-/******/ 	deferredModules.push(["./src/index.js",2]);
+/******/ 	deferredModules.push([1,3,0]);
 /******/ 	// run deferred modules when ready
 /******/ 	return checkDeferredModules();
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ "./node_modules/css-loader/index.js!./src/style.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-var escape = __webpack_require__("./node_modules/css-loader/lib/url/escape.js");
-exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, ".hello {\n    color: red;\n    background: url(" + escape(__webpack_require__("./src/Icon.png")) + ");\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./src/Icon.png":
+/******/ ([
+/* 0 */
 /***/ (function(module, exports) {
 
 module.exports = "/image/Icon.png";
 
 /***/ }),
-
-/***/ "./src/data.xml":
-/***/ (function(module, exports) {
-
-module.exports = {"note":{"to":["Mary"],"from":["John"],"heading":["Reminder"],"body":["Call Cindy on Tuesday"]}}
-
-/***/ }),
-
-/***/ "./src/index.js":
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-
-// EXTERNAL MODULE: ./src/style.css
-var style = __webpack_require__("./src/style.css");
-
-// EXTERNAL MODULE: ./src/Icon.png
-var Icon = __webpack_require__("./src/Icon.png");
-var Icon_default = /*#__PURE__*/__webpack_require__.n(Icon);
-
-// EXTERNAL MODULE: ./src/data.xml
-var data = __webpack_require__("./src/data.xml");
-
-// CONCATENATED MODULE: ./src/tree-shaking.js
-
-//tree-shaking demo
-function tree_shaking_a() {
-
-  return 'this is   function "aa"';
-}
-
-function b() {
-  return 'this is function "b"';
-}
-
-function c() {
-  return 'this is function "c"';
-}
-// CONCATENATED MODULE: ./src/index.js
+/* harmony import */ var delete__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _mm_css_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _mm_css_module__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_mm_css_module__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Icon_png__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(0);
+/* harmony import */ var _Icon_png__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Icon_png__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _data_xml__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _data_xml__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_data_xml__WEBPACK_IMPORTED_MODULE_4__);
 // import _ from 'lodash';
 // import {findIndex} from 'lodash';
 // var findIndex = require('lodash/findIndex') ;
@@ -290,9 +247,18 @@ function c() {
 
 
 
-// app.js
 
-console.log(tree_shaking_a());
+
+
+
+// app.js
+// import { a } from "./tree-shaking.js";
+
+// var tree = require('./tree-shaking.js')
+// console.log(a());
+
+
+if (false) {}
 
 // var users = [
 //   { 'user': 'barney',  'active': false },
@@ -311,18 +277,18 @@ function component() {
   element.innerHTML = 'sdasd';
   element.classList.add('hello');
 
-  var a = 'dsdf';
+  var a = 'd1233452435466yusdf';
 
   // 将图像添加到我们现有的 div。
   var myIcon = new Image();
-  myIcon.src = Icon_default.a;
+  myIcon.src = _Icon_png__WEBPACK_IMPORTED_MODULE_3___default.a;
 
   element.appendChild(myIcon);
 
   //写法一：
   element.onclick = function (e) {
     //模拟懒加载，按需加载print模块
-    __webpack_require__.e(/* import() | shijie */ 1).then(__webpack_require__.bind(null, "./src/print.js")).then(function (module) {
+    Promise.all(/* import() | shijie */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, 6)).then(function (module) {
       var print = module.default;
       print(e);
       console.dir(module);
@@ -343,31 +309,13 @@ function component() {
 document.body.appendChild(component());
 
 /***/ }),
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */
+/***/ (function(module, exports) {
 
-/***/ "./src/style.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__("./node_modules/css-loader/index.js!./src/style.css");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__("./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
+module.exports = {"note":{"to":["Mary"],"from":["John"],"heading":["Reminder"],"body":["Call Cindy on Tuesday"]}}
 
 /***/ })
-
-/******/ });
+/******/ ]);
